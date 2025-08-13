@@ -98,7 +98,7 @@ setInterval(() => {
 
   const showONP =
     (day === 0 && hour >= 20) || // Sunday 8pm+
-    (day >= 1 && day <= 4 && hour >= 18) || // Mon–Thurs 8pm+
+    (day >= 1 && day <= 4 && hour >= 20) || // Mon–Thurs 8pm+
     (day >= 1 && day <= 5 && hour < 6) // Mon–Fri before 6am
 
   if (showONP) {
@@ -118,3 +118,4 @@ document.addEventListener("click", function () {
     })
   }
 })
+
