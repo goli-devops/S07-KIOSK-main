@@ -16,19 +16,21 @@ setInterval(() => {
 
   const now = new Date()
 
-  function isHolidayNow(date) {
-    for (let dateStr of holidayDates) {
-      const holidayStart = new Date(`${dateStr}T06:00:00`)
-      const holidayEnd = new Date(holidayStart)
-      holidayEnd.setDate(holidayEnd.getDate() + 1)
-      holidayEnd.setHours(5, 59, 59)
+function isHolidayNow() {
+  for (let dateStr of holidayDates) {
+    // Holiday starts at 12:00 AM of the date
+    const holidayStart = new Date(`${dateStr}T00:00:00`);
 
-      if (date >= holidayStart && date <= holidayEnd) {
-        return true
-      }
+    // Holiday ends at 11:59:59 PM of the same day
+    const holidayEnd = new Date(`${dateStr}T23:59:59`);
+
+    if (date >= holidayStart && date <= holidayEnd) {
+      return true;
     }
-    return false
   }
+  return false;
+}
+
 
   let isHoliday = isHolidayNow(now)
 
@@ -118,4 +120,5 @@ document.addEventListener("click", function () {
     })
   }
 })
+
 
