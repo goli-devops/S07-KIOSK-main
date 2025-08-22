@@ -75,7 +75,8 @@ th {
 .room-type,
 .los,
 .rates,
-.week-el {
+.week-el,
+th{
   border: 1px solid whitesmoke;
 }
 .rates {
@@ -206,3 +207,4 @@ th {
     font-weight: 700;
   }
 } */
+
